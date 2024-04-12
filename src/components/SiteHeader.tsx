@@ -1,4 +1,4 @@
-import { LogoIcon, UserIcon } from '@/components/Icons'
+import { LogoIcon } from '@/components/Icons'
 import SiteHeaderMobile from '@/components/SiteHeaderMobile'
 import {
 	NavigationMenu,
@@ -7,6 +7,8 @@ import {
 	NavigationMenuList
 } from '@/components/ui/navigation-menu'
 import { navList } from '@/mock/nav-list'
+import { Link } from 'react-router-dom'
+import AccountDialog from './AccountDialog'
 
 const SiteHeader = () => {
 	return (
@@ -14,10 +16,10 @@ const SiteHeader = () => {
 			<div className='container'>
 				<div className='flex items-center justify-between'>
 					<div className='w-[60%] flex justify-between items-center'>
-						<a href='/'>
+						<Link to='/'>
 							<LogoIcon />
 							<span className='sr-only'>MaxWay icon</span>
-						</a>
+						</Link>
 
 						<NavigationMenu className='hidden md:flex'>
 							<NavigationMenuList className='gap-10'>
@@ -47,9 +49,9 @@ const SiteHeader = () => {
 
 						<span className='w-[1px] h-11 bg-white'></span>
 
-						<a
+						<Link
 							className='flex items-center gap-4 text-white before:content-[url("./cart-icon.svg")]'
-							href='/cart'
+							to='/cart'
 						>
 							<span>
 								<span className='block text-2xl font-bold'>
@@ -57,11 +59,9 @@ const SiteHeader = () => {
 								</span>
 								<span className='block text-sm'>0.00 UZS</span>
 							</span>
-						</a>
+						</Link>
 
-						<a className='text-white'>
-							<UserIcon />
-						</a>
+						<AccountDialog />
 					</div>
 
 					<SiteHeaderMobile />

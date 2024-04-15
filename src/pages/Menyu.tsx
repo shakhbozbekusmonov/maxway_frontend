@@ -1,5 +1,9 @@
+import Products from "@/components/Products"
+
 const Menyu = () => {
-	return <div>Menyu</div>
+	return <div>
+		<Products />
+	</div>
 }
 
 export default Menyu

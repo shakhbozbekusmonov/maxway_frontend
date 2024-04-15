@@ -5,13 +5,15 @@ import Branchs from '@/pages/Branchs'
 import ForChildren from '@/pages/ForChildren'
 import Menyu from '@/pages/Menyu'
 import ShoppingCart from '@/pages/ShoppingCart'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
 	return (
 		<BrowserRouter>
 			<SiteHeader />
 			<Routes>
+				<Route path='/' element={<Navigate to='/menyu' />} />
 				<Route path='/menyu' element={<Menyu />} />
 				<Route path='/for-children' element={<ForChildren />} />
 				<Route path='/branchs' element={<Branchs />} />
@@ -19,6 +21,7 @@ const App = () => {
 				<Route path='/cart' element={<ShoppingCart />} />
 			</Routes>
 			<SiteFooter />
+			<ToastContainer />
 		</BrowserRouter>
 	)
 }

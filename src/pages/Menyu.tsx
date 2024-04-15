@@ -1,9 +1,11 @@
-import Products from "@/components/Products"
+import ProductList from '@/components/ProductList'
 
 const Menyu = () => {
-	return <div>
-		<Products />
-	</div>
+	return (
+		<div>
+			<ProductList />
+		</div>
+	)
 }
 
 export default Menyu

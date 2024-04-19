@@ -2,10 +2,13 @@ import AccountForm from '@/components/AccountForm'
 import { UserIcon } from '@/components/Icons'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
+import { useState } from 'react'
 
 function AccountDialog() {
+	const [open, setOpen] = useState(false)
+
 	return (
-		<Dialog>
+		<Dialog open={open} onOpenChange={() => setOpen(!open)}>
 			<DialogTrigger asChild>
 				<Button
 					className='hover:bg-transparent text-white hover:text-white'
@@ -16,7 +19,7 @@ function AccountDialog() {
 				</Button>
 			</DialogTrigger>
 			<DialogContent className='sm:max-w-[425px] pt-10 flex justify-center'>
-				<AccountForm />
+				<AccountForm onClose={() => setOpen(false)} />
 			</DialogContent>
 		</Dialog>
 	)
